@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorOptionsView">
+        <attr name="titleText" format="string" localization="suggested" />
+        <attr name="valueColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ChatBoxOther">
+        <attr name="playerName" format="string" />
+        <attr name="chatContent" format="string" />
+        <attr name="timeStamp" format="string" />
+        <attr name="backgroundimage" format="reference"/>
+    </declare-styleable>
+</resources>

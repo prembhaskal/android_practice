@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+
+    <com.example.bhaskal.myapplication.customview.ChatBoxOther
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:playerName="player1"
+        custom:chatContent="This is a single line"
+        custom:timeStamp="21:35"
+        custom:backgroundimage="@drawable/small_chat_other"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+    </com.example.bhaskal.myapplication.customview.ChatBoxOther>
+
+    <com.example.bhaskal.myapplication.customview.ChatBoxOther
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:playerName="player1"
+        custom:chatContent="This is a multi line1This is a multi line1This is a multi line1\nThis is a multi line2"
+        custom:timeStamp="21:35"
+        custom:backgroundimage="@drawable/small_chat_other">
+    </com.example.bhaskal.myapplication.customview.ChatBoxOther>
+</LinearLayout>
