@@ -7,6 +7,7 @@
         <!--<item name="android:actionBarItemBackground">@android:color/holo_blue_light</item>-->
         <item name="colorPrimary">@android:color/background_dark</item>
         <item name="android:textColorPrimary">@android:color/holo_red_light</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <!-- Base application theme. -->
@@ -17,6 +18,13 @@
         <item name="colorPrimaryDark">#303F9F</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">#FF4081</item>
+    </style>
+
+    <style name="AppThdemeNoActisonBr" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@android:color/background_dark</item>
+        <item name="android:textColorPrimary">@android:color/holo_red_light</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
     </style>
 
     <style name="AppTabLayout" parent="Widget.Design.TabLayout">
