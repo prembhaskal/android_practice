@@ -13,7 +13,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/chatTopLayout"
-        android:weightSum="1.0">
+        android:weightSum="1.0"
+        android:background="@color/bright_foreground_material_dark">
 
         <LinearLayout
             android:orientation="vertical"
@@ -96,10 +97,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Member1"
+                    android:textColor="@android:color/black"
                     android:id="@+id/membername1"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:layout_marginStart="29dp"
+                    android:layout_marginStart="30dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true" />
 
@@ -118,12 +120,13 @@
                         android:src="@drawable/three_lines"
                         android:contentDescription="3 lines"
                         android:layout_margin="5dp"
-                        android:layout_gravity="right" />
+                        android:layout_gravity="center_horizontal" />
 
                     <TextView
-                        android:layout_width="fill_parent"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:text="online"
+                        android:textColor="@android:color/black"
                         android:id="@+id/memberOnline1"
                         android:background="@drawable/member_online_rect"
                         android:textAlignment="center"
@@ -138,27 +141,26 @@
                     android:layout_height="5dp"
                     android:background="@android:color/black"
                     android:id="@+id/memberline1"
-                    android:layout_alignBottom="@id/member_right_container1"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_below="@id/member_right_container1"
+                    android:layout_marginTop="5dp" />
 
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/member2layout"
-                android:layout_marginTop="100dp"
-                android:visibility="gone">
+                android:layout_marginTop="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Member1"
+                    android:text="Member2"
+                    android:textColor="@android:color/black"
                     android:id="@+id/membername2"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:layout_marginStart="29dp"
+                    android:layout_marginStart="30dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true" />
 
@@ -177,12 +179,13 @@
                         android:src="@drawable/three_lines"
                         android:contentDescription="3 lines"
                         android:layout_margin="5dp"
-                        android:layout_gravity="right" />
+                        android:layout_gravity="center_horizontal" />
 
                     <TextView
-                        android:layout_width="fill_parent"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:text="online"
+                        android:textColor="@android:color/black"
                         android:id="@+id/memberOnline2"
                         android:background="@drawable/member_online_rect"
                         android:textAlignment="center"
@@ -191,9 +194,76 @@
                         android:layout_gravity="right" />
                 </LinearLayout>
 
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@android:color/black"
+                    android:id="@+id/memberline2"
+                    android:layout_below="@id/member_right_container2"
+                    android:layout_marginTop="5dp" />
+
             </RelativeLayout>
 
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/member3layout"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Member3"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/membername3"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_marginStart="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/member_right_container3"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/threelines3"
+                        android:src="@drawable/three_lines"
+                        android:contentDescription="3 lines"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="offline"
+                        android:textColor="@android:color/black"
+                        android:id="@+id/memberOnline3"
+                        android:background="@drawable/member_offline_rect"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="right" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@android:color/black"
+                    android:id="@+id/memberline3"
+                    android:layout_below="@id/member_right_container3"
+                    android:layout_marginTop="5dp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
