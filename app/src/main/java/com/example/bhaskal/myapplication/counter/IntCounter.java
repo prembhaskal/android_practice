@@ -10,30 +10,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IntCounter implements Runnable {
 
     private final AtomicInteger counterVal;
+    private final CounterCallback counterCallback;
 
-    private List<CounterObserver> observers;
-
-    public IntCounter() {
+    public IntCounter(CounterCallback counterCallback) {
+        this.counterCallback = counterCallback;
         counterVal = new AtomicInteger();
     }
 
-    public synchronized void addObserver(CounterObserver observer) {
-        if (observer != null) {
-            observers.add(observer);
-        }
-    }
-
-    public synchronized void removeObserver(CounterObserver observer) {
-        if (observer != null) {
-            observers.remove(observer);
-        }
-    }
-
-    private synchronized void notifyObservers() {
-        for (CounterObserver observer : observers) {
-            observer.notifyChanged();
-        }
-    }
 
     public int getCounterValue() {
         return counterVal.get();
@@ -46,5 +29,6 @@ public class IntCounter implements Runnable {
     @Override
     public void run() {
         counterVal.incrementAndGet();
+        counterCallback.newCounterValue(counterVal.get());
     }
 }
