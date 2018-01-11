@@ -35,17 +35,26 @@ public class CounterController implements CounterCallback {
 
     public synchronized void start() {
         if (startedCounter == null)
-            startedCounter = executorService.schedule(counter, 1, TimeUnit.SECONDS);
+            startedCounter = executorService.scheduleAtFixedRate(counter, 0, 1, TimeUnit.SECONDS);
     }
 
     public synchronized void stop() {
-        startedCounter.cancel(true);
-        startedCounter = null;
+        if (startedCounter != null) {
+            startedCounter.cancel(true);
+            startedCounter = null;
+        }
+        else {
+            System.out.println("ERROR -- start counter before stopping.");
+        }
     }
 
     public synchronized void resetCounter() {
-        startedCounter.cancel(true);
-        counter.resetCounterValue();
+        if (startedCounter == null) {
+            counter.resetCounterValue();
+        }
+        else {
+            System.out.println("stop counter before resetting.");
+        }
     }
 
     public int getCounterValue() {
