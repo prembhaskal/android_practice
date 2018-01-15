@@ -30,18 +30,21 @@
         <activity android:name=".customview.RecyclerActivity" />
         <activity android:name=".tab.TabExampleActivity" />
         <activity android:name=".ChatInfo">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".counter.ShowCounterActivity"
             android:label="@string/title_activity_show_counter">
+        </activity>
+        <activity android:name=".HandlerTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
