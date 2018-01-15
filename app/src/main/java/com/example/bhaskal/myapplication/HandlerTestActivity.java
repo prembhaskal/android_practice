@@ -15,6 +15,7 @@ import java.util.Random;
 import static com.example.bhaskal.myapplication.Constants.SIMPLE_BG_TASK;
 
 public class HandlerTestActivity extends AppCompatActivity {
+    private static final String TAG = HandlerTestActivity.class.getSimpleName();
 
     private TextView bgDataView;
     private Button startBGTaskButton;
@@ -27,7 +28,13 @@ public class HandlerTestActivity extends AppCompatActivity {
         bgDataView = (TextView) findViewById(R.id.dataFromBackend);
         startBGTaskButton = (Button) findViewById(R.id.startBgTask);
 
-        
+        Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                Log.i(TAG, "handler of the Activity is invoked now.");
+                super.handleMessage(msg);
+            }
+        };
 
     }
 
@@ -55,7 +62,7 @@ class BGRunnableTask implements Runnable {
 
         android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_BACKGROUND);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 20; i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -76,19 +83,19 @@ class SimpleBGTask {
 
     private String bgData;
 
-    public SimpleBGTask(TextView bgDataView) {
+    SimpleBGTask(TextView bgDataView) {
         this.bgDataView = bgDataView;
     }
 
-    public TextView getBgDataView() {
+    TextView getBgDataView() {
         return bgDataView;
     }
 
-    public String getBgData() {
+    String getBgData() {
         return bgData;
     }
 
-    public void setBgData(String bgData) {
+    void setBgData(String bgData) {
         this.bgData = bgData;
     }
 }
